@@ -18,10 +18,12 @@ public class Student {
 //    mappedBy ==> does not create extra column for mapping in student table
 //          we should mention the field name by which present class is referenced (i.e.,student)
 //    cascade ==> performs operations for mapped tables also. like saving data
+//    ## No extra tables are created normally, extra column in created in @OneToOne
     private Laptop laptop;
 
     @OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
 //    in this 3 tables are created normally, if we use mappedBy 3rd table can be eliminated
+//    ## 1 Extra table is created in @OneToMany
     private List<Address> addresses = new ArrayList<>();
 
     public Student() {

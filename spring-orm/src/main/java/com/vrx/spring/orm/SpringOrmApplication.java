@@ -1,6 +1,7 @@
 package com.vrx.spring.orm;
 
 import com.vrx.spring.orm.entity.User;
+import com.vrx.spring.orm.mapping.ManyToManyMapping;
 import com.vrx.spring.orm.mapping.OneToManyMapping;
 import com.vrx.spring.orm.mapping.OneToOneMapping;
 import com.vrx.spring.orm.service.UserService;
@@ -24,6 +25,9 @@ public class SpringOrmApplication implements CommandLineRunner {
 	@Autowired
 	private OneToManyMapping oneToManyMapping;
 
+	@Autowired
+	private ManyToManyMapping manyToManyMapping;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringOrmApplication.class, args);
 	}
@@ -40,7 +44,8 @@ public class SpringOrmApplication implements CommandLineRunner {
 //		userService.updateUser(user,2);
 //		userService.deleteUser(2);
 
-//		oneToOneMapping.saveStudent();
-		oneToManyMapping.saveStudentAndAddress();
+		oneToOneMapping.saveStudent();
+//		oneToManyMapping.saveStudentAndAddress();
+//		manyToManyMapping.saveProduct();
 	}
 }
